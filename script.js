@@ -6,11 +6,9 @@ const btnOut = document.querySelector(".btn-danger");
 const testIn = () => {
   console.log("Test button IN")
 }
-
 btnIn.addEventListener("click", testIn)
 
 const testOut = () => {
   console.log("Test button OUT")
 }
-
 btnOut.addEventListener("click", testOut)
