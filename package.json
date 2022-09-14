@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MariuszLeonGebel/Konto/issues"
   },
-  "homepage": "https://github.com/MariuszLeonGebel/Konto#readme"
+  "homepage": "https://github.com/MariuszLeonGebel/Konto#readme",
+  "dependencies": {
+    "fastify": "^4.5.3"
+  }
 }
