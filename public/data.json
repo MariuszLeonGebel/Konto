@@ -1,0 +1,19 @@
+{
+  "transactions": [
+    {
+      "transactionType": "WY",
+      "transactionAmount": 300,
+      "transactionDate": "2022-09-04"
+    },
+    {
+      "transactionType": "WP",
+      "transactionAmount": 1200,
+      "transactionDate": "2022-09-14"
+    },
+    {
+      "transactionType": "WY",
+      "transactionAmount": 23300,
+      "transactionDate": "2022-09-04"
+    }
+  ]
+}
