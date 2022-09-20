@@ -2,9 +2,11 @@ const amount = document.querySelector(".form-control");
 const balance = document.querySelector(".balance");
 const btnIn = document.querySelector(".btn-success");
 const btnOut = document.querySelector(".btn-danger");
+const btnPut = document.querySelector(".btn-info");
 const feedbackList = document.querySelector('.feedbacks');
 const badgeLetter = document.querySelector('feedback__letter')
 let badgeLetters = "";
+let maxId = 0;
 
 // GET
 const getTransactions = () => {
@@ -15,11 +17,54 @@ const getTransactions = () => {
 })
 }
 
-//OBIEKT: TRANSAKCJA
-const transactionItem = {
+// GET MAX ID
+const getMaxId = () => {
+  let maxIdArray = [];
+  fetch('./data.json').then(res => {
+  return res.json();
+}).then(data => {
+  console.log(data.transactions);
+  data.transactions.forEach(item => {
+    maxIdArray.push(item.id)
+  })
+  maxId = Math.max(...maxIdArray);
+  console.log(`MaxID: ${maxId}`);
+})
+}
+
+//OBIEKT: TRANSAKCJA POST
+const transactionItemPost = {
+  id: 3,
   transactionType: "WY",
   transactionAmount: 23300,
   transactionDate: "2022-09-04"
+}
+
+//OBIEKT: TRANSAKCJA PUT
+const transactionItemPut = {
+  id: 1,
+  transactionType: "WY",
+  transactionAmount: 10000,
+  transactionDate: "2019-08-01"
+}
+
+//PUT
+const putTransaction = () => {
+  fetch('/data', {
+    method: 'PUT',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(transactionItemPut)
+  }).then(response => {
+    if(!response.ok) {
+      console.log('Something went wrong (PUT transaction)');
+      return;
+    } 
+      console.log("PUT successfully submitted")
+      getTransactions();
+  }).catch(error => console.log(error));
 }
 
 //POST
@@ -30,20 +75,20 @@ const postTransaction = () => {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(transactionItem)
+    body: JSON.stringify(transactionItemPost)
   }).then(response => {
     if(!response.ok) {
       console.log('Something went wrong');
       return;
     } 
-      console.log("Successfully submitted")
+      console.log("POST successfully submitted")
       getTransactions();
   }).catch(error => console.log(error));
 }
 
 //PRZYCISKI
 const testIn = () => {
-  getTransactions();
+  getMaxId();
 }
 btnIn.addEventListener("click", testIn)
 
@@ -51,6 +96,11 @@ const testOut = () => {
   postTransaction();
 }
 btnOut.addEventListener("click", testOut)
+
+const testPut = () => {
+  putTransaction();
+}
+btnOut.addEventListener("click", testPut)
 
 
 

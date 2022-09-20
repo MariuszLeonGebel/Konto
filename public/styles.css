@@ -13,6 +13,11 @@
   width: 30%;
 }
 
+select,
+input {
+  width: 100px;
+}
+
 .middle-section {
   outline: 1px solid lightgrey;
   border-radius: 4px;
@@ -20,7 +25,8 @@
 }
 
 .btn-success,
-.btn-danger {
+.btn-danger,
+.btn-info {
   width: 100px;
 }
 

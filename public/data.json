@@ -1,19 +1,26 @@
-{
-  "transactions": [
-    {
-      "transactionType": "WY",
-      "transactionAmount": 300,
-      "transactionDate": "2022-09-04"
-    },
-    {
-      "transactionType": "WP",
-      "transactionAmount": 1200,
-      "transactionDate": "2022-09-14"
-    },
-    {
-      "transactionType": "WY",
-      "transactionAmount": 23300,
-      "transactionDate": "2022-09-04"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "transactionType": "WY",
+    "transactionAmount": 1,
+    "transactionDate": "2022-09-04"
+  },
+  {
+    "id": 2,
+    "transactionType": "WP",
+    "transactionAmount": 2,
+    "transactionDate": "2023-10-05"
+  },
+  {
+    "transactionAmount": 800,
+    "transactionType": "WP",
+    "id": 3,
+    "transactionDate": "2022-09-20"
+  },
+  {
+    "transactionAmount": 40,
+    "transactionType": "WY",
+    "id": 4,
+    "transactionDate": "2022-09-20"
+  }
+]

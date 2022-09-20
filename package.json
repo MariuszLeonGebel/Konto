@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon index.js --ignore public/data.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,9 +20,14 @@
   "homepage": "https://github.com/MariuszLeonGebel/Konto#readme",
   "dependencies": {
     "@fastify/static": "^6.5.0",
-    "fastify": "^4.5.3"
+    "fastify": "^4.5.3",
+    "nodemon": "^2.0.20"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "@fastify/formbody": "^7.3.0",
+    "@fastify/static": "^6.5.0",
+    "@fastify/view": "^7.1.0",
+    "fastify": "^4.6.0",
+    "twig": "^1.15.4"
   }
 }

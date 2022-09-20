@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Konto</title>
+        {% block stylesheets %}
+          <link rel="stylesheet" type="text/css" href="../public/styles.css" /> 
+        {% endblock %}
+    </head>
+    <body>
+        <h1>Rejestracja transakcji</h1>
+        
+        <form action="/data" method="post">          
+          <input type="number" placeholder="Wpisz kwotę"                  name="transactionAmount">
+          <select name="transactionType">
+            <option value="WP">Wpłata</option>
+            <option value="WY">Wypłata</option>
+          </select>
+          <input type="submit" value="Add Item">
+        </form>
+
+        <ul>
+            {% for item in items %}
+                <li>{{item.id}} - {{ item.transactionType }} - {{ item.transactionAmount }} - {{ item.transactionDate }}</li>
+            {% endfor %}
+        </ul>
+
+
+        
+    </body>
+</html>
